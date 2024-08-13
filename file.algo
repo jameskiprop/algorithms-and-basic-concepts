@@ -1,0 +1,40 @@
+ALGORITHM three_nb_add
+VAR
+    num1,num2,num3 : INTEGER;
+    sum : INTEGER := 0;
+BEGIN
+    Read(num1);
+    Read(num2);
+    Read(num3);
+    sum := num1 + num2 + num3;
+    Write(sum);
+    END
+
+
+/*a case where the age is under 10, the passenger will pay only 20% of the real price;
+a case where the age is between 10 and 16, the passenger will pay 50% of the ticket price.
+a case where the age is above 16, the passenger will pay a full ticket.*/
+    IF (age< 10) THEN
+        ticket_price :=4 ;
+    ELSE_IF (age<=16) THEN
+        ticket_price :10 ;
+    ELSE
+        ticket_price :=20 ;
+    END_IF
+
+/*zoo time*/
+    /*
+1 refers to winter
+2 refers to spring
+3 refers to summer
+4 refers to autumn
+*/
+
+
+SWITCH (season) DO
+    case 1 : Write("10H00 TO 16H00"); BREAK;
+    case 2 : Write("10H00 TO 18H00"); BREAK;
+    case 3 : Write("10H00 TO 20H00"); BREAK;
+    case 4 : Write("10H00 TO 16H00"); BREAK;
+    default : write("wrong Number"); BREAK;
+END_SWITCH
