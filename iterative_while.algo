@@ -1,0 +1,17 @@
+
+ALGORITHM Iterative_while
+VAR
+    count : INTEGER := 0;
+    //n is the number to test
+    n : INTEGER;
+BEGIN
+/*while the condition is true
+,the iteration repeats the instructions 
+until the condition becomes false*/
+    WHILE (n%2 = 0 ) DO
+    n := n/2; //Dividing  count by 2 every time and
+    count := count +1; //incrementing count by 1
+END_WHILE
+Write(count)
+
+END
