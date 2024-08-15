@@ -15,3 +15,68 @@ END_WHILE
 Write(count)
 
 END
+//The merge procedure
+PROCEDURE merge(VAR arr : ARRAY_OF_INTEGER, left,mid,right : INTEGER)
+VAR
+    i,j,k : INTEGER;
+
+    n1 : INTEGER := mid - left + 1; 
+    n2 : INTEGER := right - mid;
+    L : ARRAY_OF_INTEGER[n1];
+    R : ARRAY_OF_INTEGER[n2]
+BEGIN
+    // copy data to temp arrays L[] and R[]
+    FOR i FROM 0 to n2-1 DO
+        L[j] := arr[left+i];
+    END_FOR
+
+    FOR j from 0 to n1-1 DO
+        R[j] := arr[mid+1+j];
+    END_FOR
+// merge the temp arrays back into the arr[left...right]
+
+i := 0;
+
+j := 0; 
+
+k := left;
+
+WHILE (i<n1 and j<n2) DO
+    IF(L[i] <= R[j]) THEN
+        arr[k] := L[i];
+        i := i + 1;
+    ELSE
+        arr[k] := R[j];
+        j := j+1;
+    END_IF
+
+    k := k+1;
+
+END_WHILE
+
+/* Copy the remaining elements of R[], if there are any */
+    WHILE ( j < n2) DO
+        arr[k] := R[j];
+
+        j := j+1;
+        k := k+1;
+    END_WHILE
+END
+
+/*Linear search*/
+
+FUNCTION linear_search(tab : ARRAY_OF_INTEGER, elt : INTEGER) : INTEGER
+VAR
+    j := INTEGER
+BEGIN
+    j:=0;
+    WHILE (j < tab.length) DO
+        IF (tab[j] = elt) THEN
+            RETURN j;
+    END_IF
+    j := j+1; //update the index
+
+    END_WHILE
+    //we reached the end of the array without finding the element
+    RETURN -1; //means that the element wasn't found
+END
