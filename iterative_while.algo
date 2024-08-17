@@ -80,3 +80,6 @@ BEGIN
     //we reached the end of the array without finding the element
     RETURN -1; //means that the element wasn't found
 END
+
+/*Binary search*/
+
